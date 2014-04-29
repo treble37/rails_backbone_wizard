@@ -1,0 +1,24 @@
+%div.row
+  %div.col-md-4 1.  Gender Profile
+  %div.col-md-4 2.  Hobbies
+%h1 STEP 1
+%br/
+%button.btn.btn-primary#next-step Step 2
+%p Fill out this 1 minute questionnaire to find the best match.
+%h3 I am:
+%select
+  %option{:value => "Male"} Male
+  %option{:value => "Female"} Female
+  %option{:value => "Both"} Both
+  %option{:value => "Not sure"} Not sure
+
+%h5 What cars do you like?
+%div#cars
+  %ul
+    %li All Cars
+      %ul
+        %li Sports Cars
+        %li Minvans
+        %li Station wagons
+
+

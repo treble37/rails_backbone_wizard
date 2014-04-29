@@ -1,0 +1,23 @@
+{
+  "name": "rails_backbone_wizard",
+  "version": "0.0.0",
+  "authors": [
+    "Bruce Park <bruce@binarywebpark.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}

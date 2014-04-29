@@ -1,0 +1,17 @@
+%div.row
+  %div.col-md-4 1.  Gender Profile
+  %div.col-md-4 2.  Hobbies
+%h1 STEP 2
+%br/
+%button.btn.btn-primary#next-step Back to Step 1
+%p  Fill out this 1 minute questionnaire to find the best match.
+%h5 What kinds of hobbies below do you like best?
+%div#hobbies
+  %ul
+    %li Hobbies
+      %ul
+        %li Skiing
+        %li Football
+        %li Travel
+        %li Reading
+        %li Other
