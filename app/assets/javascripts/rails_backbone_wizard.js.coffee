@@ -4,7 +4,6 @@ window.RailsBackboneWizard =
   Views: {}
   Routers: {}
   initialize: -> 
-    alert 'Hello from Backbone!'
     new RailsBackboneWizard.Routers.TreeWizards
     Backbone.history.start()
 $(document).ready ->
