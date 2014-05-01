@@ -1,0 +1,82 @@
+/*.jstree-default .jstree-no-inputboxes .jstree-inputbox {
+  display: none !important;
+}
+.jstree-default.jstree-inputbox-no-clicked .jstree-clicked {
+  background: transparent;
+  box-shadow: none;
+}
+.jstree-default.jstree-inputbox-no-clicked .jstree-clicked.jstree-hovered {
+  background: #e7f4f9;
+}
+.jstree-default.jstree-inputbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked {
+  background: transparent;
+}
+.jstree-default.jstree-inputbox-no-clicked > .jstree-wholerow-ul .jstree-wholerow-clicked.jstree-wholerow-hovered {
+  background: #e7f4f9;
+}
+
+.jstree-default .jstree-inputbox {
+  background-position: -164px -4px;
+}
+.jstree-default .jstree-inputbox:hover {
+  background-position: -164px -36px;
+}
+.jstree-default .jstree-clicked > .jstree-inputbox {
+  background-position: -228px -4px;
+}
+.jstree-default .jstree-clicked > .jstree-inputbox:hover {
+  background-position: -228px -36px;
+}
+
+.jstree-default-small .jstree-inputbox {
+  background-position: -167px -7px;
+}
+.jstree-default-small .jstree-inputbox:hover {
+  background-position: -167px -39px;
+}
+.jstree-default-small .jstree-clicked > .jstree-inputbox {
+  background-position: -231px -7px;
+}
+.jstree-default-small .jstree-clicked > .jstree-inputbox:hover {
+  background-position: -231px -39px;
+}
+.jstree-default-large .jstree-inputbox {
+  background-position: -160px 0px;
+}
+.jstree-default-large .jstree-inputbox:hover {
+  background-position: -160px -32px;
+}
+.jstree-default-large .jstree-clicked > .jstree-inputbox {
+  background-position: -224px 0px;
+}
+.jstree-default-large .jstree-clicked > .jstree-inputbox:hover {
+  background-position: -224px -32px;
+}
+
+.jstree-default-responsive .jstree-ocl,
+  .jstree-default-responsive .jstree-themeicon,
+  .jstree-default-responsive .jstree-inputbox {
+    background-size: 120px 200px;
+  }
+.jstree-default-responsive .jstree-inputbox,
+.jstree-default-responsive .jstree-inputbox:hover {
+  background-position: -40px -80px;
+}
+.jstree-default-responsive .jstree-clicked > .jstree-inputbox,
+.jstree-default-responsive .jstree-clicked > .jstree-inputbox:hover {
+  background-position: 0 -80px;
+}
+
+.jstree-default-responsive .jstree-node,
+.jstree-default-responsive .jstree-icon,
+.jstree-default-responsive .jstree-node > .jstree-ocl,
+.jstree-default-responsive .jstree-themeicon,
+.jstree-default-responsive .jstree-inputbox {
+  background-image: url("40px.png");
+  background-size: 120px 200px;
+}*/
+
+.jstree-default .jstree-inputbox {
+  background-position: -164px -4px;
+  background: red;
+}

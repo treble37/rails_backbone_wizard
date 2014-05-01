@@ -15,7 +15,7 @@
 //= require underscore
 //= require backbone
 //= require hamlcoffee
-//= require jstree/dist/jstree.min.js
+//= require jstree/dist/jstree.js
 
 //= require rails_backbone_wizard
 //= require_tree ../templates

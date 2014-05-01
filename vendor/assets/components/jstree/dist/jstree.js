@@ -6023,4 +6023,63 @@
 	// include the wholerow plugin by default
 	// $.jstree.defaults.plugins.push("wholerow");
 
+	var _b = document.createElement('B');
+	_b.className = 'jstree-icon jstree-inputbox';
+
+	$.jstree.defaults.inputbox = {
+		/**
+		 * A string for the key to use when saving the current tree (change if using multiple trees in your project). Defaults to `jstree`.
+		 * @name $.jstree.defaults.state.key
+		 * @plugin state
+		 */
+		key		: 'jstree',
+		/**
+		 * a boolean indicating if input boxes should be visible. Defaults to `true`.
+		 * @name $.jstree.defaults.inputbox.visible
+		 * @plugin inputbox
+		 */
+		visible				: true
+	};
+	$.jstree.plugins.inputbox = function (options, parent) {
+		this.bind = function () {
+			parent.bind.call(this);
+			this.element
+				.on("init.jstree", ".jstree-anchor", $.proxy(function () {
+						this._data.inputbox.visible = this.settings.inputbox.visible;
+					}, this))
+				.on("loading.jstree", $.proxy(function () {
+						// this[ this._data.inputbox.visible ? 'show_inputboxes' : 'hide_inputboxes' ]();
+						
+					}, this))
+				.on("click.jstree", $.proxy(function (e) {
+						// this[ this._data.inputbox.visible ? 'show_inputboxes' : 'hide_inputboxes' ]();
+						// this.element.addClass('jstree-inputbox');
+						this.edited_node = this.get_node(e.target);
+						
+						this.edit(this.edited_node);
+						// var st = { 'state' : this.get_state(), 'ttl' : this.settings.state.ttl, 'sec' : +(new Date()) };
+						// $.vakata.storage.set(this.settings.state.key, JSON.stringify(st));
+					}, this));
+		};
+		this.teardown = function () {
+			if(this.settings.inputbox) {
+				this.element.find(".jstree-inputbox").remove();
+			}
+			parent.teardown.call(this);
+		};
+		/**
+		 * show the node inputbox icons
+		 * @name show_inputboxes()
+		 * @plugin inputbox
+		 */
+		this.show_inputboxes = function () { this._data.core.themes.inputboxes = true; this.get_container_ul().removeClass("jstree-no-inputboxes"); };
+		/**
+		 * hide the node inputbox icons
+		 * @name hide_inputboxes()
+		 * @plugin inputbox
+		 */
+		this.hide_inputboxes = function () { this._data.core.themes.inputboxes = false; this.get_container_ul().addClass("jstree-no-inputboxes"); };
+	};
+	
+
 }));

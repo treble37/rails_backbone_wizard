@@ -2,7 +2,7 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
 
 
   initialize: ->
-    _.bindAll(this, 'render','nextStep', 'load_tree');
+    _.bindAll(this, 'render','nextStep');
     @collection = new RailsBackboneWizard.Collections.TreeWizards
     tree_wizard = new RailsBackboneWizard.Models.TreeWizard(
       current_step: 0
@@ -19,7 +19,6 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
     switch step
       when 0
         $(@el).html(@first_step_template())
-        @load_tree()
       when 1
         $(@el).html(@second_step_template())
     this       
@@ -27,28 +26,17 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
   nextStep: ->
     count = ((@model.get 'current_step')+1)%2
     if count==0
-      location.reload()
+      $.ajax
+        url: ""
+        context: document.body
+        success: (s, x) ->
+          $(this).html s
+          return
     @model.set 
       current_step: count
     @model.save
     @collection.fetch
     @render()
-
-  load_tree: ->
-    if $.vakata.storage.get("cars")
-      $("#cars").jstree('refresh')
-    else
-      cars = $("#cars").jstree
-        core:
-          themes: 
-            icons: false
-        checkbox:
-          keep_selected_style: true
-        state: 
-          key: "cars"
-        plugins: ["checkbox", "state"]
-
-    return 
   
    events: ->
     'click #next-step': 'nextStep'

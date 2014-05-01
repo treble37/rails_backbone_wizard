@@ -21,4 +21,15 @@
         %li Minvans
         %li Station wagons
 
+%h5 Nested Input Boxes Example
+%div#input_boxes
+  %ul
+    %li All Boxes
+      %ul
+        %li Box 1
+        %li Box 2
+        %li Box 3
+        %li Box 4
+
+
 
