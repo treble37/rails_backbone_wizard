@@ -1,14 +1,7 @@
 class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
 
-
   initialize: (obj) ->
     _.bindAll(this, 'render','nextStep');
-    # @collection = new RailsBackboneWizard.Collections.TreeWizards
-    # tree_wizard = new RailsBackboneWizard.Models.TreeWizard(
-    #   current_step: 0
-    # )
-    # @collection.add(tree_wizard)
-    # @model = tree_wizard
     @step = obj.id - 1
     @router = obj
     return
@@ -17,30 +10,22 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
   second_step_template: JST['tree_wizards/second_step']
 
   render: ->
-    # step = @model.get 'current_step'
     switch @step
       when 0
         $(@el).html(@first_step_template())
       when 1
         $(@el).html(@second_step_template())
-    @load_tree(@step)
+    # @load_tree(@step)
     this       
 
   nextStep: ->
-    # count = ((@model.get 'current_step')+1)%2
-    # if count==0
-    #   $.ajax
-    #     url: ""
-    #     context: document.body
-    #     success: (s, x) ->
-    #       $(this).html s
-    #       return
-    # @model.set 
-    #   current_step: count
-    # @model.save
-    console.log (@step+1)%2+1
-    @router.navigate('steps/'+((@step+1)%2+1).toString())
-    @render()
+    @router.navigate('steps/'+((@step+1)%2+1).toString(), {trigger: true})
+    $.ajax
+      url: ""
+      context: document.body
+      success: (s, x) ->
+        $(this).html s
+        return
   
   load_tree: (step) ->
     switch step
