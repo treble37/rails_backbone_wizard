@@ -6046,7 +6046,6 @@
                       // do something with $(e.target).val()
                 var obj = this.get_node('#');
                 var values = {}, i=0;
-                console.log(obj);
                 for (i=0; i<obj.children_d.length; i++) {
                 	values[obj.children_d[i]]=$("input#"+obj.children_d[i]).val();
                 }
@@ -6054,8 +6053,8 @@
               }, this))
               .on("ready.jstree open_node.jstree close_node.jstree", $.proxy(function (e) {
                 var k = $.vakata.storage.get(this.settings.inputbox.key);
+                k = jQuery.parseJSON(k);
                 if (k!=null) {
-	                k = jQuery.parseJSON(k);
 	                $.each(k, function(key,val) {
 	                	$("input#"+key).val(val);
 	                });
