@@ -6054,10 +6054,12 @@
               }, this))
               .on("ready.jstree open_node.jstree close_node.jstree", $.proxy(function (e) {
                 var k = $.vakata.storage.get(this.settings.inputbox.key);
-                k = jQuery.parseJSON(k);
-                $.each(k, function(key,val) {
-                	$("input#"+key).val(val);
-                });
+                if (k!=null) {
+	                k = jQuery.parseJSON(k);
+	                $.each(k, function(key,val) {
+	                	$("input#"+key).val(val);
+	                });
+	              }
               }, this));
       };
       this.teardown = function () {
