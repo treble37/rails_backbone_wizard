@@ -8,14 +8,14 @@ window.RailsBackboneWizard =
     Backbone.history.start()
 $(document).ready ->
   RailsBackboneWizard.initialize()
-  cars = $("#cars").jstree
+  medical = $("#medical").jstree
     core:
       themes: 
         icons: false
     checkbox:
       keep_selected_style: false
     state: 
-      key: "cars"
+      key: "medical"
     plugins: ["checkbox", "state"]
 
   input_boxes = $("#input_boxes").jstree
@@ -23,6 +23,6 @@ $(document).ready ->
       themes: 
         icons: false
     inputbox:
-      visible: true
+      key: "inputbox"
     plugins: ["inputbox"]
 

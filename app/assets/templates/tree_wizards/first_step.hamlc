@@ -1,5 +1,5 @@
 %div.row
-  %div.col-md-4 1.  Gender Profile
+  %div.col-md-4 1.  Medical Profile
   %div.col-md-4 2.  Hobbies
 %h1 STEP 1
 %br/
@@ -12,24 +12,24 @@
   %option{:value => "Both"} Both
   %option{:value => "Not sure"} Not sure
 
-%h5 What cars do you like?
-%div#cars
+%h5 Medical Profile
+%div#medical
   %ul
-    %li All Cars
+    %li Medical History
       %ul
-        %li Sports Cars
-        %li Minvans
-        %li Station wagons
+        %li Heart disease
+        %li High blood pressure
+        %li Cancer
 
 %h5 Nested Input Boxes Example
 %div#input_boxes
   %ul
-    %li All Boxes
+    %li#parent1 All Boxes
       %ul
-        %li Box 1
-        %li Box 2
-        %li Box 3
-        %li Box 4
+        %li#child1 Box 1
+        %li#child2 Box 2
+        %li#child3 Box 3
+        %li#child4 Box 4
 
 
 
