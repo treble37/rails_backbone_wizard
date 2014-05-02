@@ -1,7 +1,9 @@
 class RailsBackboneWizard.Routers.TreeWizards extends Backbone.Router
   
   routes:
-    'step/': 'steps'
-  steps: ->
-    view = new RailsBackboneWizard.Views.TreeWizardsStep()
+    'steps/:id': 'step'
+
+  step: (id) ->
+    this.id = id
+    view = new RailsBackboneWizard.Views.TreeWizardsStep(this)
     $('#step-view').html(view.render().el)
