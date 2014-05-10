@@ -1,13 +1,17 @@
+%div#step-view
+
 %h1 Listing data_objects
 
 %table
   %tr
-    %th
-    %th
-    %th
+    %th Data Record
+    %th Show
+    %th Edit
+    %th Destroy
 
   - @data_objects.each do |data_object|
     %tr
+      %td= data_object.data_record
       %td= link_to 'Show', data_object
       %td= link_to 'Edit', edit_data_object_path(data_object)
       %td= link_to 'Destroy', data_object, :method => :delete, :data => { :confirm => 'Are you sure?' }

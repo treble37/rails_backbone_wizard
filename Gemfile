@@ -15,6 +15,11 @@ group :test, :development do
   gem 'sqlite3'
 end
 
+group :development do
+  gem 'sextant'
+end
+
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 4.0.1"
@@ -32,6 +37,9 @@ gem "haml-rails", "~> 0.5.1"
 gem 'haml_coffee_assets'
 
 gem 'annotate', '~> 2.6.3'
+
+gem 'pry-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,9 +1,10 @@
 class DataObjectsController < ApplicationController
+  respond_to :html, :json
   before_action :set_data_object, only: [:show, :edit, :update, :destroy]
 
   # GET /data_objects
   def index
-    @data_objects = DataObject.all
+    respond_with(@data_objects = DataObject.all)
   end
 
   # GET /data_objects/1
@@ -21,13 +22,14 @@ class DataObjectsController < ApplicationController
 
   # POST /data_objects
   def create
-    @data_object = DataObject.new(data_object_params)
-
-    if @data_object.save
-      redirect_to @data_object, notice: 'Data object was successfully created.'
-    else
-      render action: 'new'
-    end
+    @data_object = DataObject.new(data_record: data_record_params)
+    @data_object.save
+    # if @data_object.save
+    #   redirect_to @data_object, notice: 'Data object was successfully created.'
+    # else
+    #   render action: 'new'
+    # end
+    respond_with(@data_object)
   end
 
   # PATCH/PUT /data_objects/1
@@ -54,5 +56,9 @@ class DataObjectsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def data_object_params
       params[:data_object]
+    end
+
+    def data_record_params
+      params[:data_record]
     end
 end

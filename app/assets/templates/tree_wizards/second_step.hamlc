@@ -4,6 +4,7 @@
 %h1 STEP 2
 %br/
 %button.btn.btn-primary#next-step Back to Step 1
+%button.btn.btn-primary#save-data Save Data
 %p  Fill out this 1 minute questionnaire to find the best match.
 %h5 What kinds of hobbies below do you like best?
 %div#hobbies

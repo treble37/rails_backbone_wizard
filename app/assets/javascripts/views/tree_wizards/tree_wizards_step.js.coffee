@@ -22,6 +22,20 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
 
   nextStep: ->
     @router.navigate('steps/'+((@step+1)%2+1).toString(), {trigger: true})
+
+  saveData: ->
+    i = 0
+    oJson = {}
+    sKey = undefined
+    while sKey = window.localStorage.key(i)
+      oJson[sKey] = window.localStorage.getItem(sKey)
+      i++
+    $.ajax
+        url: '/data_objects'
+        type: 'post'
+        data: {"data_record": oJson}
+        dataType: "JSON"
+
   
   load_tree: (step) ->
     switch step
@@ -57,3 +71,4 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
 
   events: ->
     'click #next-step': 'nextStep'
+    'click #save-data': 'saveData'
