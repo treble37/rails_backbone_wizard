@@ -1,7 +1,7 @@
 class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
 
   initialize: (obj) ->
-    _.bindAll(this, 'render','nextStep');
+    _.bindAll(this, 'render','nextStep', 'load_tree');
     @step = obj.id - 1
     @router = obj
     return
@@ -15,17 +15,14 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
         $(@el).html(@first_step_template())
       when 1
         $(@el).html(@second_step_template())
-    # @load_tree(@step)
+    _.defer ((view, step) ->
+      view.load_tree(step)
+    ), this, @step
+    console.log(@step)
     this       
 
   nextStep: ->
     @router.navigate('steps/'+((@step+1)%2+1).toString(), {trigger: true})
-    $.ajax
-      url: ""
-      context: document.body
-      success: (s, x) ->
-        $(this).html s
-        return
   
   load_tree: (step) ->
     switch step

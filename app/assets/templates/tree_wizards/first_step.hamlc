@@ -15,11 +15,11 @@
 %h5 Medical Profile
 %div#medical
   %ul
-    %li Medical History
+    %li#medical-history Medical History
       %ul
-        %li Heart disease
-        %li High blood pressure
-        %li Cancer
+        %li#heart-disease Heart disease
+        %li#high-blood-pressure High blood pressure
+        %li#cancer Cancer
 
 %h5 Nested Input Boxes Example
 %div#input_boxes
