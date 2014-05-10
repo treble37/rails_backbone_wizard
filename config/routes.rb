@@ -1,4 +1,6 @@
 RailsBackboneWizard::Application.routes.draw do
+  resources :data_objects
+
   resources :users
 
   root to: "users#index"

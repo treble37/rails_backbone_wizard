@@ -1,0 +1,10 @@
+= form_for @data_object do |f|
+  - if @data_object.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@data_object.errors.count, "error")} prohibited this data_object from being saved:"
+      %ul
+        - @data_object.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

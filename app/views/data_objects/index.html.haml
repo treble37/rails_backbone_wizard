@@ -1,0 +1,17 @@
+%h1 Listing data_objects
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @data_objects.each do |data_object|
+    %tr
+      %td= link_to 'Show', data_object
+      %td= link_to 'Edit', edit_data_object_path(data_object)
+      %td= link_to 'Destroy', data_object, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Data object', new_data_object_path

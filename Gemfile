@@ -31,6 +31,8 @@ gem "haml-rails", "~> 0.5.1"
 
 gem 'haml_coffee_assets'
 
+gem 'annotate', '~> 2.6.3'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
