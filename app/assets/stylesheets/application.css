@@ -10,6 +10,7 @@
  *
  *= require jstree/dist/themes/default/style
  *= require jstree/dist/themes/default/jstree_inputbox
+ *= require_tree ../../../vendor/assets/javascripts/.
  *= require_self
  *= require_tree .
  */

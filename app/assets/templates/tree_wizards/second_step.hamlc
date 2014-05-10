@@ -8,10 +8,10 @@
 %h5 What kinds of hobbies below do you like best?
 %div#hobbies
   %ul
-    %li Hobbies
+    %li#fun-hobbies Hobbies
       %ul
-        %li Skiing
-        %li Football
-        %li Travel
-        %li Reading
-        %li Other
+        %li#skiing Skiing
+        %li#football Football
+        %li#travel Travel
+        %li#reading Reading
+        %li#other Other

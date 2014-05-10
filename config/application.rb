@@ -60,5 +60,32 @@ module RailsBackboneWizard
     config.assets.version = '1.0'
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # We don't want the default of everything that isn't js or css, because it pulls too many things in
+    config.assets.precompile.shift
+
+    # Explicitly register the extensions we are interested in compiling
+    config.assets.precompile.push(Proc.new do |path|
+      File.extname(path).in? [
+        '.html', '.erb', '.haml',                 # Templates
+        '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
+        '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+      ]
+    end)
+    config.assets.precompile << Proc.new do |path|
+      if path =~ /\.(css|js)\z/
+        full_path = Rails.application.assets.resolve(path).to_path
+        app_assets_path = Rails.root.join('app', 'assets').to_path
+        if full_path.starts_with? app_assets_path
+          puts "including asset: " + full_path
+          true
+        else
+          puts "excluding asset: " + full_path
+          false
+        end
+      else
+        false
+      end
+    end
   end
 end

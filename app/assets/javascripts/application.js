@@ -12,16 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require hamlcoffee
+
 //= require underscore
 //= require backbone
-//= require hamlcoffee
-//= require jstree/dist/jstree.js
-
 //= require rails_backbone_wizard
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
+//= require_tree ../../../vendor/assets/javascripts/.
+//= require jstree/dist/jstree
 //= require_tree .
 

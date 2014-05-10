@@ -5,7 +5,15 @@ gem 'rails', '~>4.0.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+  gem 'thin'
+  gem 'rails_12factor'
+end
+
+group :test, :development do
+  gem 'sqlite3'
+end
 
 
 # Use SCSS for stylesheets
