@@ -18,7 +18,6 @@ class RailsBackboneWizard.Views.TreeWizardsStep extends Backbone.View
     _.defer ((view, step) ->
       view.load_tree(step)
     ), this, @step
-    console.log(@step)
     this       
 
   nextStep: ->
